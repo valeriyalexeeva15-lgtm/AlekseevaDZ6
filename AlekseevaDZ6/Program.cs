@@ -1,24 +1,25 @@
 ﻿namespace AlekseevaDZ6
 {
+    using System;
     internal class Program
     {
-       
+
         static void Main(string[] args)
         {
-           Console.Write("Введите делимое: ");
-            double dividend = Convert.ToDouble(Console.ReadLine());
-
-            Console.Write("Введите делитель: ");
-            double divisor = Convert.ToDouble(Console.ReadLine());
-
-            while (divisor == 0)
+            while (true)
             {
-                Console.Write("На ноль делить нельзя. Повторите ввод делителя: ");
-                divisor = Convert.ToDouble(Console.ReadLine());
+                try
+                {
+                    Console.Write("Введите целое число: ");
+                    int number = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine($"Вы ввели: {number}");
+                    break;
+                }
+                catch
+                {
+                    Console.WriteLine("Ошибка! Введите корректное целое число.");
+                }
             }
-
-            double result = dividend / divisor;
-            Console.WriteLine($"Результат: {result}");
         }
     }
 }
